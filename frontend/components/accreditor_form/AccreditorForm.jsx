@@ -11,7 +11,7 @@ class AccreditorForm extends React.Component {
   }
 
   handleToggleFormat(e) {
-    if (e.target.id === "live") {
+    if (e.target.id === "accform-live") {
       this.setState({ live: true });
     } else {
       this.setState({ live: false });
@@ -45,63 +45,80 @@ class AccreditorForm extends React.Component {
   render() {
     return (
       <section>
-        <h1 className="text-center">Create CLE Certificate Transaction</h1>
-        <form className="container accreditorForm">
-          <label htmlFor="cle-provider-id">CLE Provider ID</label>
-          <input id="cle-provider-id" type="text" />
+        <h1 className="text-center accform__title">
+          Create CLE Certificate Transaction
+        </h1>
+        <form className="accreditorForm">
+          <label htmlFor="accform-cle-provider-id">Provider ID</label>
+          <input id="accform-cle-provider-id" type="text" />
 
-          <label htmlFor="attorney-id">Attorney ID</label>
-          <input id="attorney-id" type="text" />
+          <label htmlFor="accform-attorney-id">Attorney ID</label>
+          <input id="accform-attorney-id" type="text" />
 
-          <label htmlFor="class-title">Class Title</label>
-          <input id="class-title" type="text" />
+          <label htmlFor="accform-class-title">Class Title</label>
+          <input id="accform-class-title" type="text" />
 
-          <label htmlFor="date">Date</label>
-          <input id="date" type="date" />
+          <label htmlFor="accform-date">Date</label>
+          <input id="accform-date" type="date" />
 
-          <label htmlFor="location">Location</label>
-          <input id="location" type="text" />
+          <label htmlFor="accform-location">Location</label>
+          <input id="accform-location" type="text" />
 
-          <label htmlFor="num-cle-credits"># CLE Credits</label>
-          <input id="num-cle-credits" type="number" min="1" max="24" />
+          <label htmlFor="accform-num-cle-credits"># CLE Credits</label>
+          <input id="accform-num-cle-credits" type="number" min="1" max="24" />
 
-          <label htmlFor="notes">Notes</label>
-          <textarea id="notes" rows="4" cols="50" />
+          <label htmlFor="accform-notes">Notes</label>
+          <textarea id="accform-notes" rows="4" cols="50" />
 
-          <h3>Format</h3>
-          <label htmlFor="live">Live</label>
-          <input
-            onClick={this.handleToggleFormat}
-            id="live"
-            type="radio"
-            name="format"
-          />
+          <h6>Format</h6>
+          <div className="accform__format">
+            <label className="accform__radio-label" htmlFor="accform-live">
+              Live
+            </label>
+            <input
+              onClick={this.handleToggleFormat}
+              id="accform-live"
+              type="radio"
+              name="format"
+            />
 
-          <label htmlFor="remote">Remote</label>
-          <input
-            onClick={this.handleToggleFormat}
-            id="remote"
-            type="radio"
-            name="format"
-          />
+            <label className="accform__radio-label" htmlFor="accform-remote">
+              Remote
+            </label>
+            <input
+              onClick={this.handleToggleFormat}
+              id="accform-remote"
+              type="radio"
+              name="format"
+            />
+          </div>
 
           {this.formatChoices()}
 
-          <h3>Participation Type</h3>
-          <label htmlFor="group">Group</label>
-          <input id="group" type="radio" name="participation" />
+          <h6>Participation Type</h6>
+          <div className="accform__participation-types">
+            <label className="accform__radio-label" htmlFor="accform-group">
+              Group
+            </label>
+            <input id="accform-group" type="radio" name="participation" />
 
-          <label htmlFor="individual-self-study">Individual / Self Study</label>
-          <input id="individual-self-study" type="radio" name="participation" />
+            <label
+              className="accform__radio-label"
+              htmlFor="accform-individual"
+            >
+              Individual / Self Study
+            </label>
+            <input id="accform-individual" type="radio" name="participation" />
+          </div>
 
-          <h3>Level of Difficulty</h3>
+          <h6>Level of Difficulty</h6>
           <select>
             <option value="Experienced Attorney">Experienced Attorney</option>
             <option value="New Admitted">New Admitted</option>
             <option value="Both">Both</option>
           </select>
 
-          <h3>Category</h3>
+          <h6>Category</h6>
           <select>
             <option value="Skills">Skills</option>
             <option value="Ethics and Professionalism">

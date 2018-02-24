@@ -1,4 +1,36 @@
 .accreditorForm {
   display: flex;
   flex-direction: column;
+  padding: 0 30px 30px 30px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.accform__title {
+  white-space: nowrap;
+}
+
+.accform__format,
+.accform__participation-types {
+  display: flex;
+}
+
+input[type="radio"] {
+  margin: 0 10px;
+}
+
+.accreditorForm label {
+  margin-top: 12px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.accreditorForm h6 {
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+label.accform__radio-label {
+  margin: 0;
+  font-weight: normal;
 }
