@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default class Lawyer extends React.Component {
   render() {
@@ -6,9 +7,9 @@ export default class Lawyer extends React.Component {
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
           <div className="container">
-            <a className="navbar-brand" href="#">
+            <NavLink className="navbar-brand" to="/">
               Credible
-            </a>
+            </NavLink>
             <button
               className="navbar-toggler"
               type="button"
@@ -23,10 +24,10 @@ export default class Lawyer extends React.Component {
             <div className="collapse navbar-collapse" id="navbarResponsive">
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item active">
-                  <a className="nav-link" href="#">
+                  <NavLink className="nav-link" to="/">
                     Home
                     <span className="sr-only">(current)</span>
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
