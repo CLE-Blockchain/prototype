@@ -45,76 +45,54 @@ class AccreditorForm extends React.Component {
   render() {
     return (
       <section>
-        <h1 class="text-center">Create CLE Certificate Transaction</h1>
+        <h1 className="text-center">Create CLE Certificate Transaction</h1>
         <form className="container accreditorForm">
-          <label>
-            CLE Provider ID
-            <input type="text" />
-          </label>
+          <label htmlFor="cle-provider-id">CLE Provider ID</label>
+          <input id="cle-provider-id" type="text" />
 
-          <label>
-            Attorney ID
-            <input type="text" />
-          </label>
+          <label htmlFor="attorney-id">Attorney ID</label>
+          <input id="attorney-id" type="text" />
 
-          <label>
-            Class Title
-            <input type="text" />
-          </label>
+          <label htmlFor="class-title">Class Title</label>
+          <input id="class-title" type="text" />
 
-          <label>
-            Date
-            <input type="date" />
-          </label>
+          <label htmlFor="date">Date</label>
+          <input id="date" type="date" />
 
-          <label>
-            Location
-            <input type="text" />
-          </label>
+          <label htmlFor="location">Location</label>
+          <input id="location" type="text" />
 
-          <label>
-            # CLE Credits
-            <input type="number" min="1" max="24" />
-          </label>
+          <label htmlFor="num-cle-credits"># CLE Credits</label>
+          <input id="num-cle-credits" type="number" min="1" max="24" />
 
-          <label>
-            Notes
-            <textarea rows="4" cols="50" />
-          </label>
+          <label htmlFor="notes">Notes</label>
+          <textarea id="notes" rows="4" cols="50" />
 
           <h3>Format</h3>
-          <label>
-            Live
-            <input
-              onClick={this.handleToggleFormat}
-              id="live"
-              type="radio"
-              name="format"
-            />
-          </label>
+          <label htmlFor="live">Live</label>
+          <input
+            onClick={this.handleToggleFormat}
+            id="live"
+            type="radio"
+            name="format"
+          />
 
-          <label>
-            Remote
-            <input
-              onClick={this.handleToggleFormat}
-              id="remote"
-              type="radio"
-              name="format"
-            />
-          </label>
+          <label htmlFor="remote">Remote</label>
+          <input
+            onClick={this.handleToggleFormat}
+            id="remote"
+            type="radio"
+            name="format"
+          />
 
           {this.formatChoices()}
 
           <h3>Participation Type</h3>
-          <label>
-            Group
-            <input type="radio" name="participation" />
-          </label>
+          <label htmlFor="group">Group</label>
+          <input id="group" type="radio" name="participation" />
 
-          <label>
-            Individual / Self Study
-            <input type="radio" name="participation" />
-          </label>
+          <label htmlFor="individual-self-study">Individual / Self Study</label>
+          <input id="individual-self-study" type="radio" name="participation" />
 
           <h3>Level of Difficulty</h3>
           <select>
