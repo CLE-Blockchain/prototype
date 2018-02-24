@@ -11,7 +11,8 @@
 }
 
 .accform__format,
-.accform__participation-types {
+.accform__participation-types,
+.accform__credits {
   display: flex;
 }
 
@@ -26,11 +27,27 @@ input[type="radio"] {
 }
 
 .accreditorForm h6 {
-  margin-top: 5px;
+  margin-top: 15px;
   font-weight: bold;
 }
 
-label.accform__radio-label {
+label.accform__radio-label,
+label.accform__credits-label {
   margin: 0;
   font-weight: normal;
+}
+
+.accform__credits {
+  flex-direction: column;
+}
+
+.accform__submit {
+  margin: 30px 0;
+  color: white;
+  border: 1px solid #007bff;
+  cursor: pointer;
+  border-radius: 4px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 20px;
 }

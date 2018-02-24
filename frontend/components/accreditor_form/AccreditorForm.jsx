@@ -64,9 +64,6 @@ class AccreditorForm extends React.Component {
           <label htmlFor="accform-location">Location</label>
           <input id="accform-location" type="text" />
 
-          <label htmlFor="accform-num-cle-credits"># CLE Credits</label>
-          <input id="accform-num-cle-credits" type="number" min="1" max="24" />
-
           <label htmlFor="accform-notes">Notes</label>
           <textarea id="accform-notes" rows="4" cols="50" />
 
@@ -118,19 +115,42 @@ class AccreditorForm extends React.Component {
             <option value="Both">Both</option>
           </select>
 
-          <h6>Category</h6>
-          <select>
-            <option value="Skills">Skills</option>
-            <option value="Ethics and Professionalism">
+          <h6>Credits</h6>
+          <div className="accform__credits">
+            <label
+              className="accform__credits-label"
+              htmlFor="accform-credit-skills"
+            >
+              Skills
+            </label>
+            <input id="accform-credit-skills" type="number" min="0" />
+
+            <label
+              className="accform__credits-label"
+              htmlFor="accform-credit-ethics"
+            >
               Ethics and Professionalism
-            </option>
-            <option value="Areas of Professional Practice">
+            </label>
+            <input id="accform-credit-ethics" type="number" min="0" />
+
+            <label
+              className="accform__credits-label"
+              htmlFor="accform-credit-areas"
+            >
               Areas of Professional Practice
-            </option>
-            <option value="Law Practice Management">
+            </label>
+            <input id="accform-credit-areas" type="number" min="0" />
+
+            <label
+              className="accform__credits-label"
+              htmlFor="accform-credit-management"
+            >
               Law Practice Management
-            </option>
-          </select>
+            </label>
+            <input id="accform-credit-management" type="number" min="0" />
+          </div>
+
+          <button className="bg-primary accform__submit">Submit</button>
         </form>
       </section>
     );
