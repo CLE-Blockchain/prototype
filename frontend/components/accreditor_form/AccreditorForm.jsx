@@ -45,8 +45,8 @@ class AccreditorForm extends React.Component {
   render() {
     return (
       <section>
-        <h1>Create CLE Certificate Transaction</h1>
-        <form>
+        <h1 class="text-center">Create CLE Certificate Transaction</h1>
+        <form className="container accreditorForm">
           <label>
             CLE Provider ID
             <input type="text" />
