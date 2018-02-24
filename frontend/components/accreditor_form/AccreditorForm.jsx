@@ -1,10 +1,24 @@
 import React from "react";
+import _ from "lodash";
 
 class AccreditorForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      live: false
+      live: false,
+      providerId: "",
+      attorneyId: "",
+      classTitle: "",
+      date: "",
+      location: "",
+      notes: "",
+      format: "",
+      participationType: "",
+      difficulty: "",
+      skills: "0",
+      ethics: "0",
+      practice: "0",
+      management: "0"
     };
     this.handleToggleFormat = this.handleToggleFormat.bind(this);
     this.formatChoices = this.formatChoices.bind(this);
@@ -21,12 +35,23 @@ class AccreditorForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    const data = {};
+    data[this.state.attorneyId] = _.merge({}, this.state);
+    delete data[this.state.attorneyId].live;
+    console.log(data);
+  }
+
+  handleChange(type) {
+    return e => {
+      this.setState({ [type]: e.target.value });
+      console.log(this.state[type]);
+    };
   }
 
   formatChoices() {
     if (this.state.live) {
       return (
-        <select>
+        <select onChange={this.handleChange("format")}>
           <option selected disabled>
             -- Select a live format --
           </option>
@@ -57,6 +82,7 @@ class AccreditorForm extends React.Component {
           <div className="form-group">
             <label htmlFor="accform-cle-provider-id">Provider ID</label>
             <input
+              onChange={this.handleChange("providerId")}
               className="form-control"
               id="accform-cle-provider-id"
               className="form-control"
@@ -67,6 +93,7 @@ class AccreditorForm extends React.Component {
           <div className="form-group">
             <label htmlFor="accform-attorney-id">Attorney ID</label>
             <input
+              onChange={this.handleChange("attorneyId")}
               className="form-control"
               id="accform-attorney-id"
               className="form-control"
@@ -77,6 +104,7 @@ class AccreditorForm extends React.Component {
           <div className="form-group">
             <label htmlFor="accform-class-title">Class Title</label>
             <input
+              onChange={this.handleChange("classTitle")}
               className="form-control"
               id="accform-class-title"
               className="form-control"
@@ -86,17 +114,28 @@ class AccreditorForm extends React.Component {
 
           <div className="form-group">
             <label htmlFor="accform-date">Date</label>
-            <input className="form-control" id="accform-date" type="date" />
+            <input
+              onChange={this.handleChange("date")}
+              className="form-control"
+              id="accform-date"
+              type="date"
+            />
           </div>
 
           <div className="form-group">
             <label htmlFor="accform-location">Location</label>
-            <input className="form-control" id="accform-location" type="text" />
+            <input
+              onChange={this.handleChange("location")}
+              className="form-control"
+              id="accform-location"
+              type="text"
+            />
           </div>
 
           <div className="form-group">
             <label htmlFor="accform-notes">Notes</label>
             <textarea
+              onChange={this.handleChange("notes")}
               id="accform-notes"
               className="form-control"
               rows="4"
@@ -120,7 +159,9 @@ class AccreditorForm extends React.Component {
               Remote
             </label>
             <input
+              onChange={this.handleChange("format")}
               onClick={this.handleToggleFormat}
+              value="remote"
               id="accform-remote"
               type="radio"
               name="format"
@@ -134,7 +175,13 @@ class AccreditorForm extends React.Component {
             <label className="accform__radio-label" htmlFor="accform-group">
               Group
             </label>
-            <input id="accform-group" type="radio" name="participation" />
+            <input
+              onChange={this.handleChange("participationType")}
+              value="group"
+              id="accform-group"
+              type="radio"
+              name="participation"
+            />
 
             <label
               className="accform__radio-label"
@@ -142,12 +189,21 @@ class AccreditorForm extends React.Component {
             >
               Individual / Self Study
             </label>
-            <input id="accform-individual" type="radio" name="participation" />
+            <input
+              onChange={this.handleChange("participationType")}
+              value="individual"
+              id="accform-individual"
+              type="radio"
+              name="participation"
+            />
           </div>
 
           <div className="form-group">
             <label>Level of Difficulty</label>
-            <select className="form-control">
+            <select
+              onChange={this.handleChange("difficulty")}
+              className="form-control"
+            >
               <option value="Experienced Attorney">Experienced Attorney</option>
               <option value="New Admitted">New Admitted</option>
               <option value="Both">Both</option>
@@ -164,6 +220,7 @@ class AccreditorForm extends React.Component {
                 Skills
               </label>
               <input
+                onChange={this.handleChange("skills")}
                 className="form-control"
                 id="accform-credit-skills"
                 type="number"
@@ -179,6 +236,7 @@ class AccreditorForm extends React.Component {
                 Ethics and Professionalism
               </label>
               <input
+                onChange={this.handleChange("ethics")}
                 className="form-control"
                 id="accform-credit-ethics"
                 type="number"
@@ -194,6 +252,7 @@ class AccreditorForm extends React.Component {
                 Areas of Professional Practice
               </label>
               <input
+                onChange={this.handleChange("practice")}
                 className="form-control"
                 id="accform-credit-areas"
                 type="number"
@@ -209,6 +268,7 @@ class AccreditorForm extends React.Component {
                 Law Practice Management
               </label>
               <input
+                onChange={this.handleChange("management")}
                 className="form-control"
                 id="accform-credit-management"
                 type="number"
