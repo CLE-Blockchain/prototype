@@ -35,16 +35,14 @@ class AccreditorForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const data = {};
-    data[this.state.attorneyId] = _.merge({}, this.state);
-    delete data[this.state.attorneyId].live;
-    console.log(data);
+    const data = _.merge({}, this.state);
+    delete data.live;
+    this.props.createTransaction(data);
   }
 
   handleChange(type) {
     return e => {
       this.setState({ [type]: e.target.value });
-      console.log(this.state[type]);
     };
   }
 
@@ -85,7 +83,6 @@ class AccreditorForm extends React.Component {
               onChange={this.handleChange("providerId")}
               className="form-control"
               id="accform-cle-provider-id"
-              className="form-control"
               type="text"
             />
           </div>
@@ -96,7 +93,6 @@ class AccreditorForm extends React.Component {
               onChange={this.handleChange("attorneyId")}
               className="form-control"
               id="accform-attorney-id"
-              className="form-control"
               type="text"
             />
           </div>
@@ -107,7 +103,6 @@ class AccreditorForm extends React.Component {
               onChange={this.handleChange("classTitle")}
               className="form-control"
               id="accform-class-title"
-              className="form-control"
               type="text"
             />
           </div>

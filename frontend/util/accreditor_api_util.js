@@ -1,8 +1,23 @@
 export const createTransaction = data => {
   return $.ajax({
-    url: "/placeholder",
+    url:
+      "https://integrawalletproxy.azurewebsites.net/fwd/api/registerIdentity",
     method: "post",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
     dataType: "json",
-    data
+    data: {
+      type: "com.integraledger.lmat",
+      value: escape(JSON.stringify(data))
+    }
+  });
+};
+
+export const fetchTransaction = identityId => {
+  return $.ajax({
+    url: `https://integrawalletproxy.azurewebsites.net/fwd/api/identityExists?id=${identityId}`,
+    method: "get",
+    dataType: "json"
   });
 };
