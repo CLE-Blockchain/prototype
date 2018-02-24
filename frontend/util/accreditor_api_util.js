@@ -17,7 +17,7 @@ export const createTransaction = data => {
 export const fetchTransaction = identityId => {
   return $.ajax({
     url: `https://integrawalletproxy.azurewebsites.net/fwd/api/identityExists?id=${identityId}`,
-    method: "get",
-    dataType: "json"
+    method: "get"
   });
 };
+// window.fetchTransaction = fetchTransaction;

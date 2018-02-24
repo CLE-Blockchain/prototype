@@ -10,8 +10,8 @@ export const receiveTransaction = payload => ({
 export const createTransaction = data => dispatch => {
   return AccreditorApiUtil.createTransaction(data).then(
     identityId => {
-      dispatch(receiveTransaction(identityId));
       console.log("Posted data:", data);
+      console.log("Identity ID:", identityId);
       return identityId;
     },
     error => {
@@ -22,7 +22,9 @@ export const createTransaction = data => dispatch => {
 
 export const fetchTransaction = identityId => dispatch => {
   return AccreditorApiUtil.fetchTransaction(identityId).then(payload => {
-    console.log(unescape(payload));
+    const cle = JSON.parse(unescape(payload.data[0].value));
+    dispatch(receiveTransaction(cle));
+    console.log(cle);
   });
 };
 
