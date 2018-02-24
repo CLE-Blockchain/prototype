@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+.shift-down {
+  margin-top: 80px;
+}
+
+.portfolio-item {
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.card.h-100 {
+  transition: box-shadow 300ms ease-in-out;
+}
+
+.card.h-100:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}

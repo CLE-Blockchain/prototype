@@ -7,7 +7,7 @@ export default class Lawyer extends React.Component {
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
           <div className="container">
             <a className="navbar-brand" href="#">
-              Start Bootstrap
+              Credible
             </a>
             <button
               className="navbar-toggler"
@@ -30,17 +30,7 @@ export default class Lawyer extends React.Component {
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    About
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Services
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Contact
+                    Upload
                   </a>
                 </li>
               </ul>
@@ -48,10 +38,9 @@ export default class Lawyer extends React.Component {
           </div>
         </nav>
 
-        <div className="container">
+        <div className="container shift-down">
           <h1 className="my-4">
-            Page Heading
-            <small>Secondary Text</small>
+            <small />
           </h1>
 
           <div className="row">
