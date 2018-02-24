@@ -8,8 +8,8 @@ class App extends React.Component {
     return (
       <div>
         <Switch>
-          <Route exact path="/" component={Landing} />
           <Route path="/accreditor" component={AccreditorForm} />
+          <Route path="/" component={Landing} />
         </Switch>
       </div>
     );
