@@ -8,6 +8,7 @@ class AccreditorForm extends React.Component {
     };
     this.handleToggleFormat = this.handleToggleFormat.bind(this);
     this.formatChoices = this.formatChoices.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleToggleFormat(e) {
@@ -16,6 +17,10 @@ class AccreditorForm extends React.Component {
     } else {
       this.setState({ live: false });
     }
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
   }
 
   formatChoices() {
@@ -48,24 +53,56 @@ class AccreditorForm extends React.Component {
         <h1 className="text-center accform__title">
           Create CLE Certificate Transaction
         </h1>
-        <form className="accreditorForm">
-          <label htmlFor="accform-cle-provider-id">Provider ID</label>
-          <input id="accform-cle-provider-id" type="text" />
+        <form onSubmit={this.handleSubmit} className="accreditorForm">
+          <div className="form-group">
+            <label htmlFor="accform-cle-provider-id">Provider ID</label>
+            <input
+              className="form-control"
+              id="accform-cle-provider-id"
+              className="form-control"
+              type="text"
+            />
+          </div>
 
-          <label htmlFor="accform-attorney-id">Attorney ID</label>
-          <input id="accform-attorney-id" type="text" />
+          <div className="form-group">
+            <label htmlFor="accform-attorney-id">Attorney ID</label>
+            <input
+              className="form-control"
+              id="accform-attorney-id"
+              className="form-control"
+              type="text"
+            />
+          </div>
 
-          <label htmlFor="accform-class-title">Class Title</label>
-          <input id="accform-class-title" type="text" />
+          <div className="form-group">
+            <label htmlFor="accform-class-title">Class Title</label>
+            <input
+              className="form-control"
+              id="accform-class-title"
+              className="form-control"
+              type="text"
+            />
+          </div>
 
-          <label htmlFor="accform-date">Date</label>
-          <input id="accform-date" type="date" />
+          <div className="form-group">
+            <label htmlFor="accform-date">Date</label>
+            <input className="form-control" id="accform-date" type="date" />
+          </div>
 
-          <label htmlFor="accform-location">Location</label>
-          <input id="accform-location" type="text" />
+          <div className="form-group">
+            <label htmlFor="accform-location">Location</label>
+            <input className="form-control" id="accform-location" type="text" />
+          </div>
 
-          <label htmlFor="accform-notes">Notes</label>
-          <textarea id="accform-notes" rows="4" cols="50" />
+          <div className="form-group">
+            <label htmlFor="accform-notes">Notes</label>
+            <textarea
+              id="accform-notes"
+              className="form-control"
+              rows="4"
+              cols="50"
+            />
+          </div>
 
           <h6>Format</h6>
           <div className="accform__format">
@@ -108,46 +145,76 @@ class AccreditorForm extends React.Component {
             <input id="accform-individual" type="radio" name="participation" />
           </div>
 
-          <h6>Level of Difficulty</h6>
-          <select>
-            <option value="Experienced Attorney">Experienced Attorney</option>
-            <option value="New Admitted">New Admitted</option>
-            <option value="Both">Both</option>
-          </select>
+          <div className="form-group">
+            <label>Level of Difficulty</label>
+            <select className="form-control">
+              <option value="Experienced Attorney">Experienced Attorney</option>
+              <option value="New Admitted">New Admitted</option>
+              <option value="Both">Both</option>
+            </select>
+          </div>
 
           <h6>Credits</h6>
           <div className="accform__credits">
-            <label
-              className="accform__credits-label"
-              htmlFor="accform-credit-skills"
-            >
-              Skills
-            </label>
-            <input id="accform-credit-skills" type="number" min="0" />
+            <div className="form-group">
+              <label
+                className="accform__credits-label"
+                htmlFor="accform-credit-skills"
+              >
+                Skills
+              </label>
+              <input
+                className="form-control"
+                id="accform-credit-skills"
+                type="number"
+                min="0"
+              />
+            </div>
 
-            <label
-              className="accform__credits-label"
-              htmlFor="accform-credit-ethics"
-            >
-              Ethics and Professionalism
-            </label>
-            <input id="accform-credit-ethics" type="number" min="0" />
+            <div className="form-group">
+              <label
+                className="accform__credits-label"
+                htmlFor="accform-credit-ethics"
+              >
+                Ethics and Professionalism
+              </label>
+              <input
+                className="form-control"
+                id="accform-credit-ethics"
+                type="number"
+                min="0"
+              />
+            </div>
 
-            <label
-              className="accform__credits-label"
-              htmlFor="accform-credit-areas"
-            >
-              Areas of Professional Practice
-            </label>
-            <input id="accform-credit-areas" type="number" min="0" />
+            <div className="form-group">
+              <label
+                className="accform__credits-label"
+                htmlFor="accform-credit-areas"
+              >
+                Areas of Professional Practice
+              </label>
+              <input
+                className="form-control"
+                id="accform-credit-areas"
+                type="number"
+                min="0"
+              />
+            </div>
 
-            <label
-              className="accform__credits-label"
-              htmlFor="accform-credit-management"
-            >
-              Law Practice Management
-            </label>
-            <input id="accform-credit-management" type="number" min="0" />
+            <div className="form-group">
+              <label
+                className="accform__credits-label"
+                htmlFor="accform-credit-management"
+              >
+                Law Practice Management
+              </label>
+              <input
+                className="form-control"
+                id="accform-credit-management"
+                type="number"
+                min="0"
+              />
+            </div>
           </div>
 
           <button className="bg-primary accform__submit">Submit</button>
