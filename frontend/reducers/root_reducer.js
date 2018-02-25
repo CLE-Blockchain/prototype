@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
-import accreditorReducer from "./accreditor_reducer";
+// import accreditorReducer from "./accreditor_reducer";
+import recordsReducer from "./records_reducer";
 
 const rootReducer = combineReducers({
-  accreditor: accreditorReducer
+  records: recordsReducer
+  // accreditor: accreditorReducer
 });
 
 export default rootReducer;
