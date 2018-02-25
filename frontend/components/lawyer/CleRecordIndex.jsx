@@ -18,8 +18,8 @@ export default class CleRecordIndex extends React.Component {
           <small />
         </h1>
         <div className="row">
-          {this.props.records.map(record => {
-            return <CleRecordIndexItem key={record.Id} record={record} />;
+          {this.props.records.map((record, idx) => {
+            return <CleRecordIndexItem key={idx} record={record} />;
           })}
         </div>
       </div>

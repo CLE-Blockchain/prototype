@@ -7,7 +7,7 @@ export default class Lawyer extends React.Component {
   render() {
     return (
       <div>
-        <Nav links={["Home", "Upload"]} />
+        <Nav links={["Home"]} />
 
         <LawyerIndex
           lawyers={[

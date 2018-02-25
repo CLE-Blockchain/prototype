@@ -2,6 +2,41 @@ import React from "react";
 import { NavLink, withRouter } from "react-router-dom";
 
 class Navbar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { submitting: false };
+    this.handleUpload = this.handleUpload.bind(this);
+  }
+
+  componentWillReceiveProps() {
+    this.setState({ submitting: false });
+  }
+
+  handleUpload(e) {
+    this.setState({ submitting: true });
+    setTimeout(() => {
+      this.props.uploadRecord(this.parseForm());
+    }, 2000);
+  }
+
+  parseForm() {
+    return {
+      providerId: Math.floor(Math.random() * 20000),
+      attorneyId: Math.floor(Math.random() * 20000),
+      classTitle: "Important Class",
+      date: "2/25/18",
+      location: "NYC",
+      notes: "",
+      format: "remote",
+      participationType: "individual",
+      difficulty: "both",
+      skills: Math.floor(Math.random() * 4),
+      ethics: Math.floor(Math.random() * 4),
+      practice: Math.floor(Math.random() * 4),
+      management: Math.floor(Math.random() * 4)
+    };
+  }
+
   render() {
     return (
       <div>
@@ -29,10 +64,18 @@ class Navbar extends React.Component {
                   } else if (link.toLowerCase() === "upload") {
                     return (
                       <li key={idx} className="nav-item upload">
-                        <a className="nav-link">
-                          Upload
-                          <span className="sr-only">(current)</span>
-                        </a>
+                        <label
+                          htmlFor="lawyer-upload"
+                          className="lawyer__custom-upload"
+                        >
+                          Add CLE
+                        </label>
+                        <input
+                          onChange={this.handleUpload}
+                          id="lawyer-upload"
+                          className="lawyer__new-cle"
+                          type="file"
+                        />
                       </li>
                     );
                   }

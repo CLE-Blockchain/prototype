@@ -36,6 +36,22 @@ export const createRecord = data => dispatch => {
   });
 };
 
+export const uploadRecord = data => dispatch => {
+  return (
+    RecordApiUtil.createRecord(data).then(identityId => {
+      RecordApiUtil.createRecordAssoc(
+        data.attorneyId,
+        identityId.identityId,
+        data.classTitle
+      ).then(arg => {
+        // dispatch(fetchRecord(identityId.identityId));
+        return arg;
+      });
+    }),
+    error => console.log(error)
+  );
+};
+
 export const fetchRecord = identityId => dispatch => {
   return RecordApiUtil.fetchRecord(identityId).then(payload => {
     const cle = JSON.parse(unescape(payload.data[0].value));

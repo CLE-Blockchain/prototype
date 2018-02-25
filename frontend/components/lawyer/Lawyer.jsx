@@ -7,7 +7,10 @@ class Lawyer extends React.Component {
   render() {
     return (
       <div>
-        <Navbar links={["Home", "Upload"]} />
+        <Navbar
+          links={["Home", "Upload"]}
+          uploadRecord={this.props.uploadRecord}
+        />
 
         <CleRecordIndexContainer lawyerId={this.props.match.params.id} />
 

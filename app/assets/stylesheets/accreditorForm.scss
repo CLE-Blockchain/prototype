@@ -1,9 +1,17 @@
+.accreditorForm__section {
+  margin: 20px 0;
+}
+
 .accreditorForm {
+  animation: fadein 2s, slidein 2s;
   display: flex;
   flex-direction: column;
+  margin: 20px 0;
   padding: 0 30px 30px 30px;
-  max-width: 500px;
+  max-width: 650px;
   margin: 0 auto;
+  border: 1px solid lightgrey;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .accform__title {
