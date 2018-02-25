@@ -1,5 +1,6 @@
-.fadein {
-  animation: fadein 1s;
+.card {
+  animation: slidein 1s, fadein 1s;
+  position: relative;
 }
 
 @keyframes fadein {
@@ -8,5 +9,15 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes slidein {
+  from {
+    top: -100px;
+  }
+
+  to {
+    top: 0;
   }
 }
