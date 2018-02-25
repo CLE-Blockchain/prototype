@@ -3,10 +3,9 @@ export const createRecord = data => {
     url: "http://127.0.0.1:3000/api/registerIdentity",
     method: "post",
     headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-      "encrypt-param": "value"
+      "Content-Type": "application/x-www-form-urlencoded"
+      // "encrypt-param": "value"
     },
-    dataType: "json",
     data: {
       type: "com.integraledger.lmat",
       value: escape(JSON.stringify(data))
@@ -17,10 +16,10 @@ export const createRecord = data => {
 export const fetchRecord = integraId => {
   return $.ajax({
     url: `http://127.0.0.1:3000/api/identityExists?id=${integraId}`,
-    method: "get",
-    headers: {
-      "decrypt-param": "value"
-    }
+    method: "get"
+    // headers: {
+    // "decrypt-param": "value"
+    // }
   });
 };
 

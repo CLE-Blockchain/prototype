@@ -53,11 +53,16 @@ export const uploadRecord = data => dispatch => {
 };
 
 export const fetchRecord = identityId => dispatch => {
-  return RecordApiUtil.fetchRecord(identityId).then(payload => {
-    const cle = JSON.parse(unescape(payload.data[0].value));
-    dispatch(receiveRecord(cle));
-    console.log(cle);
-  });
+  return RecordApiUtil.fetchRecord(identityId).then(
+    payload => {
+      const cle = JSON.parse(unescape(payload.data[0].value));
+      dispatch(receiveRecord(cle));
+      console.log(cle);
+    },
+    error => {
+      alert("Decryption Failed.");
+    }
+  );
 };
 
 window.fetchRecord = integraId => window.dispatch(fetchRecord(integraId));
