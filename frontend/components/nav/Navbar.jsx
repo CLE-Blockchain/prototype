@@ -22,7 +22,7 @@ class Navbar extends React.Component {
   parseForm() {
     return {
       providerId: Math.floor(Math.random() * 20000),
-      attorneyId: Math.floor(Math.random() * 20000),
+      attorneyId: this.props.lawyerId,
       classTitle: "Important Class",
       date: "2/25/18",
       location: "NYC",

@@ -11,8 +11,8 @@ class App extends React.Component {
       <div>
         <Switch>
           <Route path="/accreditor" component={AccreditorFormContainer} />
-          <Route path="/lawyerchooser" component={LawyerChooser} />
           <Route path="/lawyers/:id" component={LawyerContainer} />
+          <Route path="/lawyers" component={LawyerChooser} />
           <Route path="/" component={Landing} />
         </Switch>
       </div>

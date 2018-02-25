@@ -44,7 +44,7 @@ export const uploadRecord = data => dispatch => {
         identityId.identityId,
         data.classTitle
       ).then(arg => {
-        // dispatch(fetchRecord(identityId.identityId));
+        dispatch(fetchRecord(identityId.identityId));
         return arg;
       });
     }),

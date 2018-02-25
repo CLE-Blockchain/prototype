@@ -8,7 +8,8 @@ class Lawyer extends React.Component {
     return (
       <div>
         <Navbar
-          links={["Home", "Upload"]}
+          lawyerId={this.props.match.params.id}
+          links={["Home", "Lawyers", "Upload"]}
           uploadRecord={this.props.uploadRecord}
         />
 

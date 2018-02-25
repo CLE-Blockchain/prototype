@@ -7,7 +7,7 @@ export default class Landing extends React.Component {
     return (
       <section className="landing">
         <Nav links={[]} />
-        <Link className="landing__lawyer" to="/lawyerchooser">
+        <Link className="landing__lawyer" to="/lawyers">
           <p>Lawyer</p>
         </Link>
         <Link className="landing__accreditor" to="/accreditor">
