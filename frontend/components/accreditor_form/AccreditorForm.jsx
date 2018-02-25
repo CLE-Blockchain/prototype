@@ -73,7 +73,7 @@ class AccreditorForm extends React.Component {
 
   render() {
     return (
-      <section className="form-view">
+      <section className="form-view accreditorForm__section">
         <Navbar links={[]} />
         <h1 className="text-center accform__title">
           Create CLE Certificate Transaction

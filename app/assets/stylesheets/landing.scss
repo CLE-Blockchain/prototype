@@ -1,5 +1,6 @@
 .landing {
   display: flex;
+  overflow: hidden;
 }
 
 .landing__lawyer,
@@ -33,11 +34,11 @@
   background-image: asset-url("hammer.jpg");
   &:hover {
     p {
-      background-color: #3b7be2;
+      background-color: #03b0c6;
     }
   }
   p {
-    background-color: cornflowerblue;
+    background-color: #009bae;
     color: white;
   }
 }
@@ -46,11 +47,11 @@
   background-image: asset-url("book.jpg");
   &:hover {
     p {
-      background-color: lightgreen;
+      background-color: orange;
     }
   }
   p {
-    background-color: #4ad83a;
+    background-color: #ff9608;
     color: white;
   }
 }

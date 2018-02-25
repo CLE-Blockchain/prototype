@@ -40,11 +40,11 @@ class Navbar extends React.Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-light fixed-top">
           <div className="container">
-            <NavLink className="navbar-brand" to="/">
-              Credible
-            </NavLink>
+            <div className="navbar__brand">
+              <NavLink className="navbar-brand" to="/" />
+            </div>
             <button
               className="navbar-toggler"
               type="button"
