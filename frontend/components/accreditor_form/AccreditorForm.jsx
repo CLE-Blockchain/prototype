@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../nav/Navbar";
+import { withRouter } from "react-router-dom";
 import _ from "lodash";
 
 class AccreditorForm extends React.Component {
@@ -24,6 +25,7 @@ class AccreditorForm extends React.Component {
     this.handleToggleFormat = this.handleToggleFormat.bind(this);
     this.formatChoices = this.formatChoices.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.redirect = this.redirect.bind(this);
   }
 
   handleToggleFormat(e) {
@@ -34,11 +36,16 @@ class AccreditorForm extends React.Component {
     }
   }
 
+  redirect() {
+    this.props.history.push(`/lawyers/${this.data.attorneyId}`);
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const data = _.merge({}, this.state);
     delete data.live;
-    this.props.createRecord(data);
+    this.data = data;
+    this.props.createRecord(data).then(this.redirect);
   }
 
   handleChange(type) {
@@ -281,4 +288,4 @@ class AccreditorForm extends React.Component {
   }
 }
 
-export default AccreditorForm;
+export default withRouter(AccreditorForm);
