@@ -2,9 +2,9 @@ import * as RecordApiUtil from "../util/record_api_util";
 
 export const RECEIVE_RECORD = "RECEIVE_RECORD";
 
-export const receiveRecord = payload => ({
+export const receiveRecord = record => ({
   type: RECEIVE_RECORD,
-  payload
+  record
 });
 
 export const createRecord = data => dispatch => {
@@ -20,6 +20,7 @@ export const createRecord = data => dispatch => {
         console.log("Posted data:", data);
         console.log("Identity ID:", identityId);
         console.log("arg:", arg);
+        dispatch(receiveRecord(arg));
         return identityId;
       }),
       error => {
