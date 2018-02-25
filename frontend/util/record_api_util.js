@@ -1,4 +1,4 @@
-export const createTransaction = data => {
+export const createRecord = data => {
   return $.ajax({
     url:
       "https://integrawalletproxy.azurewebsites.net/fwd/api/registerIdentity",
@@ -14,14 +14,14 @@ export const createTransaction = data => {
   });
 };
 
-export const fetchTransaction = integraId => {
+export const fetchRecord = integraId => {
   return $.ajax({
     url: `https://integrawalletproxy.azurewebsites.net/fwd/api/identityExists?id=${integraId}`,
     method: "get"
   });
 };
 
-export const createTransactionAssoc = (lawyerId, integraId, courseName) => {
+export const createRecordAssoc = (lawyerId, integraId, courseName) => {
   var dataObj = {
     LawyerId: lawyerId,
     IntegraId: integraId,
@@ -39,7 +39,7 @@ export const createTransactionAssoc = (lawyerId, integraId, courseName) => {
   });
 };
 
-export const fetchLawyerTransactions = lawyerId => {
+export const fetchLawyerRecords = lawyerId => {
   return $.ajax({
     url: `https://credibleapi.azurewebsites.net/api/LawyerIntegraIdMappings/${lawyerId}`,
     method: "get"

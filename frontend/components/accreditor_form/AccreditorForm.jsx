@@ -37,7 +37,7 @@ class AccreditorForm extends React.Component {
     e.preventDefault();
     const data = _.merge({}, this.state);
     delete data.live;
-    this.props.createTransaction(data);
+    this.props.createRecord(data);
   }
 
   handleChange(type) {
