@@ -42,3 +42,11 @@
 .upload {
   cursor: pointer;
 }
+
+.bg-turq {
+  background: #009bae;
+}
+
+.bg-orange {
+  background: #ff9608;
+}

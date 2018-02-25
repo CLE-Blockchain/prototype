@@ -15,7 +15,9 @@ export default class LawyerIndexItem extends React.Component {
           </div>
           <div className="card-body">
             <h4 className="card-title">
-              <div className="text-center">{this.props.lawyer.name}</div>
+              <div className="text-center lawyer-name">
+                {this.props.lawyer.name}
+              </div>
             </h4>
           </div>
         </Link>

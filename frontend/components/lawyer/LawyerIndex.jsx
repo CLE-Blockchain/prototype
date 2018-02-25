@@ -10,7 +10,7 @@ export default class CleRecordIndex extends React.Component {
           <small />
         </h1>
         <div className="row row-lawyer">
-          {this.props.lawyers.map(lawyer => {
+          {this.props.lawyers.map((lawyer, idx) => {
             return <LawyerIndexItem key={lawyer.id} lawyer={lawyer} />;
           })}
         </div>
