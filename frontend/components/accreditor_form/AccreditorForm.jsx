@@ -75,10 +75,10 @@ class AccreditorForm extends React.Component {
     return (
       <section className="form-view accreditorForm__section">
         <Navbar links={[]} />
-        <h1 className="text-center accform__title">
-          Create CLE Certificate Transaction
-        </h1>
         <form onSubmit={this.handleSubmit} className="accreditorForm">
+          <h1 className="text-center accform__title">
+            Create CLE Certificate Transaction
+          </h1>
           <div className="form-group">
             <label htmlFor="accform-cle-provider-id">Provider ID</label>
             <input
@@ -274,7 +274,7 @@ class AccreditorForm extends React.Component {
             </div>
           </div>
 
-          <button className="bg-primary accform__submit">Submit</button>
+          <button className="accform__submit">Submit</button>
         </form>
       </section>
     );

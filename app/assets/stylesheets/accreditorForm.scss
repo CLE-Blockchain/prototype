@@ -1,13 +1,14 @@
 .accreditorForm__section {
-  margin: 70px 0 30px 0;
+  padding: 60px 0 40px 0;
+  background-color: #009bae;
 }
 
 .accreditorForm {
   animation: fadein 2s, slidein 2s;
   display: flex;
   flex-direction: column;
-  margin: 20px 0;
-  padding: 0 30px 30px 30px;
+  padding: 20px 30px 30px 30px;
+  background-color: white;
   max-width: 650px;
   margin: 0 auto;
   border: 1px solid lightgrey;
@@ -15,7 +16,7 @@
 }
 
 .accform__title {
-  white-space: nowrap;
+  padding: 10px 0;
 }
 
 .accform__format,
@@ -52,10 +53,13 @@ label.accform__credits-label {
 .accform__submit {
   margin: 30px 0;
   color: white;
-  border: 1px solid #007bff;
+  background-color: #ff9608;
   cursor: pointer;
   border-radius: 4px;
   padding-top: 5px;
   padding-bottom: 5px;
   font-size: 20px;
+  &:hover {
+    background-color: orange;
+  }
 }

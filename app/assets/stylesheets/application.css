@@ -19,7 +19,11 @@
 } */
 
 .nav-filler {
+<<<<<<< HEAD
   height: 115px;
+=======
+  height: 120px;
+>>>>>>> 637c4187352ad8f5c73c038c63620ca3f4bc275b
 }
 
 .portfolio-item {
