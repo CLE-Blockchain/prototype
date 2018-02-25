@@ -1,10 +1,16 @@
 import * as RecordApiUtil from "../util/record_api_util";
 
 export const RECEIVE_RECORD = "RECEIVE_RECORD";
+export const RECEIVE_RECORDS = "RECEIVE_RECORDS";
 
 export const receiveRecord = record => ({
   type: RECEIVE_RECORD,
   record
+});
+
+export const receiveRecords = records => ({
+  type: RECEIVE_RECORDS,
+  records
 });
 
 export const createRecord = data => dispatch => {
@@ -42,7 +48,7 @@ window.fetchRecord = integraId => window.dispatch(fetchRecord(integraId));
 
 export const fetchLawyerRecords = lawyerId => dispatch => {
   return RecordApiUtil.fetchLawyerRecords(lawyerId).then(payload => {
-    dispatch(receiveRecord(payload));
+    dispatch(receiveRecords(payload));
     console.log(payload);
   });
 };

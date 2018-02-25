@@ -1,15 +1,16 @@
 import _ from "lodash";
-import { RECEIVE_RECORD } from "../actions/record_actions";
+import { RECEIVE_RECORD, RECEIVE_RECORDS } from "../actions/record_actions";
 
-const recordsReducer = (state = {}, action) => {
+const recordsReducer = (state = [], action) => {
   Object.freeze(state);
 
   let newState;
 
   switch (action.type) {
+    case RECEIVE_RECORDS:
+      return action.records;
     case RECEIVE_RECORD:
-      newState = _.merge({}, state);
-      newState[action.record.Id] = action.record;
+      newState = state.concat([action.record]);
       return newState;
     default:
       return state;
