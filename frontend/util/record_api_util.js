@@ -1,10 +1,10 @@
 export const createRecord = data => {
   return $.ajax({
-    url:
-      "https://integrawalletproxy.azurewebsites.net/fwd/api/registerIdentity",
+    url: "http://127.0.0.1:3000/api/registerIdentity",
     method: "post",
     headers: {
-      "Content-Type": "application/x-www-form-urlencoded"
+      "Content-Type": "application/x-www-form-urlencoded",
+      "encrypt-param": "value"
     },
     dataType: "json",
     data: {
@@ -16,8 +16,11 @@ export const createRecord = data => {
 
 export const fetchRecord = integraId => {
   return $.ajax({
-    url: `https://integrawalletproxy.azurewebsites.net/fwd/api/identityExists?id=${integraId}`,
-    method: "get"
+    url: `http://127.0.0.1:3000/api/identityExists?id=${integraId}`,
+    method: "get",
+    headers: {
+      "decrypt-param": "value"
+    }
   });
 };
 
