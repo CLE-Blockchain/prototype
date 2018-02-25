@@ -13,8 +13,8 @@
   text-align: center;
   background-position: center;
   cursor: pointer;
-  transition: 0.4s;
-  font-size: 16px;
+  transition: 0.5s;
+  font-size: 30px;
   text-decoration: none !important;
   color: white;
   background-position: center;
@@ -23,8 +23,7 @@
     transform: scale(1.03);
   }
   p {
-    padding: 10px;
-    width: 150px;
+    padding: 15px 25px;
     border-radius: 5px;
     transition: 0.4s;
   }
@@ -47,11 +46,11 @@
   background-image: asset-url("book.jpg");
   &:hover {
     p {
-      background-color: #4ad83a;
+      background-color: lightgreen;
     }
   }
   p {
-    background-color: lightgreen;
+    background-color: #4ad83a;
     color: white;
   }
 }
