@@ -11,11 +11,8 @@ export default class CleRecordIndexItem extends React.Component {
       <div className="col-lg-4 col-sm-6 portfolio-item">
         <div className="card h-100">
           <div>
-            <img
-              className="card-img-top"
-              src="http://placehold.it/700x400"
-              alt=""
-            />
+            <div className="card-img-top cle-img" />
+            <div className="cle-img-bot" />
           </div>
           <div className="card-body">
             <h4 className="card-title">
