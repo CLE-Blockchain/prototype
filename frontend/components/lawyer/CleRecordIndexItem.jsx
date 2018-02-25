@@ -6,7 +6,24 @@ export default class CleRecordIndexItem extends React.Component {
   }
 
   render() {
-    // debugger; // eslint-disable-line
+    const {
+      classTitle,
+      providerId,
+      date,
+      skills,
+      ethics,
+      practice,
+      management
+    } = this.props.record;
+
+    const allCategories = ["Skills", "Ethics", "Practice", "Management"];
+    const recordCategories = [];
+    [skills, ethics, practice, management].forEach((category, idx) => {
+      if (parseInt(category) > 0) {
+        recordCategories.push(allCategories[idx]);
+      }
+    });
+
     return (
       <div className="col-lg-4 col-sm-6 portfolio-item">
         <div className="card h-100">
@@ -16,14 +33,13 @@ export default class CleRecordIndexItem extends React.Component {
           </div>
           <div className="card-body">
             <h4 className="card-title">
-              <div>{this.props.record.classTitle}</div>
+              <div>{classTitle}</div>
             </h4>
-            <p className="card-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-              numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit,
-              repellat sequi itaque deserunt, dolores in, nesciunt, illum
-              tempora ex quae? Nihil, dolorem!
-            </p>
+            <div className="card-text">
+              <div>Provider ID: {providerId}</div>
+              <div>Date: {date}</div>
+              <div>{recordCategories.join(", ")}</div>
+            </div>
           </div>
         </div>
       </div>

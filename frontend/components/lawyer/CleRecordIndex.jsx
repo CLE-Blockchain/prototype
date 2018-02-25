@@ -44,7 +44,9 @@ export default class CleRecordIndex extends React.Component {
           <li>Ethics and Professionalism: {ethics}</li>
           <li>Areas of Professional Practice: {practice}</li>
           <li>Law Practice Management: {management}</li>
-          <li>Total: {total}</li>
+          <li>
+            <strong>Total: {total}</strong>
+          </li>
         </ul>
       </section>
     );
