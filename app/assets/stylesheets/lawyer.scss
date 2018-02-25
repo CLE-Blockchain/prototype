@@ -38,3 +38,14 @@
 a.card:hover {
   text-decoration: none;
 }
+
+.card-ryan {
+  background: image-url("ryan.jpg");
+}
+
+.card-person {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  background-position: center center;
+}

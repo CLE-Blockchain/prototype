@@ -7,10 +7,13 @@ export default class LawyerIndexItem extends React.Component {
       <div className="col-lg-4 col-sm-6 portfolio-item">
         <Link to={`/lawyers/${this.props.lawyer.id}`} className="card h-100">
           <div>
-            <img
+            {/* <img
               className="card-img-top"
               src="http://placehold.it/700x400"
               alt=""
+            /> */}
+            <div
+              className={`card-img-top card-person card-${this.props.lawyer.name.toLowerCase()}`}
             />
           </div>
           <div className="card-body">
