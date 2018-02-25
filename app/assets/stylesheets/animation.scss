@@ -3,6 +3,11 @@
   position: relative;
 }
 
+.form-view {
+  animation: slidein 0.5s, fadein 1.5s;
+  position: relative;
+}
+
 @keyframes fadein {
   from {
     opacity: 0;

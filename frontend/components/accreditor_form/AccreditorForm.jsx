@@ -72,7 +72,7 @@ class AccreditorForm extends React.Component {
 
   render() {
     return (
-      <section>
+      <section className="form-view">
         <h1 className="text-center accform__title">
           Create CLE Certificate Transaction
         </h1>
