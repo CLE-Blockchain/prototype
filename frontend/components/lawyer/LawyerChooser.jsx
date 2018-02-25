@@ -12,7 +12,7 @@ export default class Lawyer extends React.Component {
         <LawyerIndex
           lawyers={[
             {
-              id: "1",
+              id: "5505714",
               name: "John Scrudato"
             },
             {
@@ -20,7 +20,7 @@ export default class Lawyer extends React.Component {
               name: "Ryan Kutter"
             },
             {
-              id: "3",
+              id: "4875993",
               name: "Stephanie Spangler"
             },
             {
