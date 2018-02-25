@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "../nav/Navbar";
 import _ from "lodash";
 
 class AccreditorForm extends React.Component {
@@ -73,6 +74,7 @@ class AccreditorForm extends React.Component {
   render() {
     return (
       <section className="form-view">
+        <Navbar links={[]} />
         <h1 className="text-center accform__title">
           Create CLE Certificate Transaction
         </h1>

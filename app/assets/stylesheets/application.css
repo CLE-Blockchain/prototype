@@ -14,8 +14,12 @@
  *= require_self
  */
 
-.shift-down {
+/* .shift-down {
   margin-top: 80px;
+} */
+
+.nav-filler {
+  height: 80px;
 }
 
 .portfolio-item {
