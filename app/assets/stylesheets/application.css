@@ -34,3 +34,7 @@
 .row-lawyer {
   justify-content: center;
 }
+
+.upload {
+  cursor: pointer;
+}
