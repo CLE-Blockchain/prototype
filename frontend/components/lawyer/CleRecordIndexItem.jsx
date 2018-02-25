@@ -19,7 +19,7 @@ export default class CleRecordIndexItem extends React.Component {
           </div>
           <div className="card-body">
             <h4 className="card-title">
-              <div>{this.props.record.CourseName}</div>
+              <div>{this.props.record.classTitle}</div>
             </h4>
             <p className="card-text">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet

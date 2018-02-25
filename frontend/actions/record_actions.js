@@ -48,7 +48,10 @@ window.fetchRecord = integraId => window.dispatch(fetchRecord(integraId));
 
 export const fetchLawyerRecords = lawyerId => dispatch => {
   return RecordApiUtil.fetchLawyerRecords(lawyerId).then(payload => {
-    dispatch(receiveRecords(payload));
+    payload.forEach(transaction => {
+      // debugger; // eslint-disable-line
+      dispatch(fetchRecord(transaction.IntegraId));
+    });
     console.log(payload);
   });
 };
