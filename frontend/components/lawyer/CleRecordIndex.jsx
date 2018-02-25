@@ -61,7 +61,7 @@ export default class CleRecordIndex extends React.Component {
         {this.creditStats()}
         <div className="row">
           {this.props.records.map((record, idx) => {
-            return <CleRecordIndexItem key={idx} record={record} />;
+            return <CleRecordIndexItem key={idx} idx={idx} record={record} />;
           })}
         </div>
       </div>

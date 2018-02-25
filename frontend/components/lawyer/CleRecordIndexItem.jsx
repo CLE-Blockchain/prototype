@@ -1,8 +1,14 @@
 import React from "react";
+import { Link, withRouter } from "react-router-dom";
 
-export default class CleRecordIndexItem extends React.Component {
+class CleRecordIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    this.redirect = this.redirect.bind(this);
+  }
+
+  redirect() {
+    this.props.history.push(`/records/${this.props.idx}`);
   }
 
   render() {
@@ -25,7 +31,7 @@ export default class CleRecordIndexItem extends React.Component {
     });
 
     return (
-      <div className="col-lg-4 col-sm-6 portfolio-item">
+      <div onClick={this.redirect} className="col-lg-4 col-sm-6 portfolio-item">
         <div className="card h-100">
           <div>
             <div className="card-img-top cle-img" />
@@ -46,3 +52,5 @@ export default class CleRecordIndexItem extends React.Component {
     );
   }
 }
+
+export default withRouter(CleRecordIndexItem);

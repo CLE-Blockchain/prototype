@@ -3,6 +3,7 @@ import AccreditorFormContainer from "./accreditor_form/AccreditorFormContainer";
 import Landing from "./landing/Landing";
 import LawyerContainer from "./lawyer/LawyerContainer";
 import LawyerChooser from "./lawyer/LawyerChooser";
+import RecordFormContainer from "./record_form/RecordFormContainer";
 import { Route, Switch } from "react-router-dom";
 
 class App extends React.Component {
@@ -13,6 +14,7 @@ class App extends React.Component {
           <Route path="/accreditor" component={AccreditorFormContainer} />
           <Route path="/lawyerchooser" component={LawyerChooser} />
           <Route path="/lawyers/:id" component={LawyerContainer} />
+          <Route path="/records/:id" component={RecordFormContainer} />
           <Route path="/" component={Landing} />
         </Switch>
       </div>
