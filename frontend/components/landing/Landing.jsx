@@ -23,7 +23,7 @@ export default class Landing extends React.Component {
             </button>
           </div>
         </nav>
-        <Link className="landing__lawyer" to="/lawyer">
+        <Link className="landing__lawyer" to="/lawyerchooser">
           <p>Lawyer</p>
         </Link>
         <Link className="landing__accreditor" to="/accreditor">

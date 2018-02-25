@@ -1,8 +1,8 @@
 import React from "react";
-import { NavLink, withRouter } from "react-router-dom";
-import CleRecordIndexContainer from "./CleRecordIndexContainer";
+import { NavLink } from "react-router-dom";
+import LawyerIndex from "./LawyerIndex";
 
-class Lawyer extends React.Component {
+export default class Lawyer extends React.Component {
   render() {
     return (
       <div>
@@ -40,12 +40,35 @@ class Lawyer extends React.Component {
           </div>
         </nav>
 
-        <CleRecordIndexContainer lawyerId={this.props.match.params.id} />
+        <LawyerIndex
+          lawyers={[
+            {
+              id: "1",
+              name: "John Scrudato"
+            },
+            {
+              id: "5511902",
+              name: "Ryan Kutter"
+            },
+            {
+              id: "3",
+              name: "Stephanie"
+            },
+            {
+              id: "4",
+              name: "Martin Hui"
+            },
+            {
+              id: "5070859",
+              name: "Christian Lang"
+            }
+          ]}
+        />
 
         <footer className="py-5 bg-dark">
           <div className="container">
             <p className="m-0 text-center text-white">
-              Copyright &copy; Your Website 2018
+              Copyright &copy; Credible 2018
             </p>
           </div>
         </footer>
@@ -53,5 +76,3 @@ class Lawyer extends React.Component {
     );
   }
 }
-
-export default withRouter(Lawyer);
