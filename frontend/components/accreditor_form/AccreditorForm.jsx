@@ -37,7 +37,7 @@ class AccreditorForm extends React.Component {
   }
 
   redirect() {
-    this.props.history.push(`/lawyers/${this.data.attorneyId}`);
+    this.props.history.push(`/lawyers`);
   }
 
   handleSubmit(e) {
