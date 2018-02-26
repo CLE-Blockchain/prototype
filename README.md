@@ -28,11 +28,14 @@ Accreditors can fill out a simple form which adds an encrypted CLE onto Integra 
 
 Lawyers can see all their CLEs which are retrieved from Integra Ledger's blockchain.
 
-## Special thanks to
+**Credible is Powered by Integra**
 
-**Integra Ledger**  
+![integra_logo](./screenshots/integra_logo.png)
+
 GitHub: https://github.com/IntegraLedger  
 Website: http://integraledger.com/
+
+## Special thanks to
 
 [John Scrudato](https://www.linkedin.com/in/john-scrudato/)  
 [Ryan Kutter](https://www.linkedin.com/in/ryan-kutter-12152b91/)  
@@ -40,4 +43,5 @@ Website: http://integraledger.com/
 [Martin Hui](https://www.linkedin.com/in/martinhui/)  
 [Christian Lang](https://www.linkedin.com/in/christianllang/)  
 [Luke Espina](https://www.linkedin.com/in/luke-espina/)  
-[Sunny Wong](https://www.linkedin.com/in/sunny-gy-wong/)
+[Sunny Wong](https://www.linkedin.com/in/sunny-gy-wong/)  
+[Paul Alvord](https://www.linkedin.com/in/paulalvord/)
